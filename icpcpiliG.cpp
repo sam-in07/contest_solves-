@@ -1,47 +1,61 @@
-
 #include<bits/stdc++.h>
 #define ll long long
-#define     a(v)              v.begin(), v.end()
+
 using namespace std;
 
 
 int main() {
+//attempt : kabbo 
 /*solver : samin  */
 /*team name : IIUC_Newbies*/
-   ll test;
-   cin>>test;
-   for(ll t=1;t<=test;t++){
-  ll n;cin>>n;
-  ll ar[n];
-  for(ll i = 0;i<n;i++)cin>>ar[i];
-  ll ans = (n*(n+1))/2;
-  ans-=n;
-  ll c = 1;
-  for(ll i = 1;i<n;i++)
-  {
-   if(ar[i]==ar[i-1])c++;
-   else 
-   {
-      ll m = (c*(c+1))/2;
-      m-=c;
-      //cout<<m<<endl;
-      ans-=m;
-      c = 1;
-   }
-  }
-  ll m = (c*(c+1))/2;
-      m-=c;
-      //cout<<m<<endl;
-      ans-=m;
-      c = 1;
-  cout<<"Case "<<t<<": ";
-cout<<ans<<endl;
-
-   }   
-   retrun 0 ;
-
+   ll t;
+   cin>>t;
+   while(t--)
+    {
+    string s;cin>>s;
+    ll over = (s.size())/6;
+    ll ball = s.size()-(over*6);
+    ll w = 0,r = 0;
+    for(ll i = 0;i<s.size();i++)
+    {
+        if(s[i]=='W')w++;
+        else r+=s[i]-'0';
+    }
+   // 1.3 Overs 12 Runs 0 Wicket.
+    cout<<over<<"."<<ball<<" ";
+    if((s.size()>6))cout<<"Overs ";
+    else cout<<"Over ";
+    cout<<r<<" ";
+    if(r>1)cout<<"Runs ";
+    else cout<<"Run ";
+    cout<<w<<" ";
+    if(w>1)cout<<"Wickets.";
+    else cout<<"Wicket.";
+    cout<<endl;
+    }
+    return 0;
 }
-    
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
